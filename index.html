@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Israel Oluwatona — Cybersecurity Portfolio</title>
+<meta name="description" content="Entry-level Cybersecurity Analyst portfolio for Israel Oluwatona — Merit America trainee, Google Cybersecurity Professional Certificate (expected 01/2027), with a NIST CSF incident report case study and hands-on coursework in Linux, Wireshark, Splunk, and Windows forensics." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5faf7;
+    --bg-2:#eaf5ef;
+    --surface:#ffffff;
+    --surface-2:#eef6f1;
+    --ink:#0b1e3a;
+    --ink-2:#33475f;
+    --muted:#64788f;
+    --line:#d9e6df;
+    --line-strong:#b7d0c4;
+    --teal:#0d9488;
+    --teal-strong:#0a7568;
+    --teal-soft:#e0f4ee;
+    --teal-line:rgba(13,148,136,.28);
+    --coral:#ff6a4d;
+    --coral-strong:#d9482b;
+    --coral-soft:#ffe9e2;
+    --coral-line:rgba(255,106,77,.38);
+    --navy:#081630;
+    --navy-2:#0d2145;
+    --navy-ink:#eef4ff;
+    --navy-dim:#9db4d4;
+    --navy-line:rgba(255,255,255,.13);
+    --mint:#3fe0c5;
+    --band:#e7f6ef;
+    --shadow-sm:0 1px 2px rgba(8,22,48,.05),0 1px 3px rgba(8,22,48,.04);
+    --shadow-md:0 12px 32px -14px rgba(8,22,48,.22),0 3px 8px -3px rgba(8,22,48,.08);
+    --radius:16px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#070f1f;
+      --bg-2:#0a1730;
+      --surface:#0d1d38;
+      --surface-2:#122544;
+      --ink:#e9f1fd;
+      --ink-2:#c2d2e8;
+      --muted:#8ba1bd;
+      --line:#1d3357;
+      --line-strong:#2b4a7d;
+      --teal:#2dd4bf;
+      --teal-strong:#2dd4bf;
+      --teal-soft:#0c2e33;
+      --teal-line:rgba(45,212,191,.30);
+      --coral:#ff8266;
+      --coral-strong:#ff8266;
+      --coral-soft:#3a2019;
+      --coral-line:rgba(255,130,102,.38);
+      --navy:#050b18;
+      --navy-2:#081630;
+      --band:#0a1a30;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.35);
+      --shadow-md:0 12px 30px -14px rgba(0,0,0,.55),0 3px 10px -3px rgba(0,0,0,.4);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:inherit}
+  ::selection{background:var(--coral);color:#fff}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* ---------- Sticky navigation ---------- */
+  .topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border-bottom:1px solid var(--line)}
+  .topbar-inner{max-width:1080px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;min-width:0}
+  .brand-mark{width:36px;height:36px;border-radius:10px;background:var(--navy);color:var(--mint);display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-weight:600;font-size:13px;letter-spacing:.02em;flex:0 0 auto;box-shadow:var(--shadow-sm)}
+  @media (prefers-color-scheme: dark){.brand-mark{background:var(--surface-2);color:var(--mint);border:1px solid var(--line-strong)}}
+  .brand-name{font-weight:700;font-size:14.5px;letter-spacing:-.01em;line-height:1.15;white-space:nowrap}
+  .brand-sub{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+  .topbar nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+  .topbar nav a{text-decoration:none;font-size:13px;font-weight:600;padding:8px 12px;border-radius:999px;color:var(--ink-2);transition:background .18s,color .18s}
+  .topbar nav a:hover{background:var(--surface-2);color:var(--ink)}
+  .topbar nav a.active{background:var(--teal-soft);color:var(--teal-strong)}
+  .nav-cta{background:var(--navy)!important;color:var(--navy-ink)!important}
+  .nav-cta:hover{background:var(--navy-2)!important;color:#fff!important}
+  @media(max-width:700px){
+    .brand-text{display:none}
+    .topbar-inner{height:56px;padding:0 16px;flex-wrap:nowrap;gap:10px}
+    .brand-mark{width:34px;height:34px;border-radius:10px}
+    .topbar nav{flex-wrap:nowrap;gap:2px}
+    .topbar nav a{padding:7px 9px;font-size:12.5px;white-space:nowrap}
+    .topbar nav a[href="#summary"],.topbar nav a[href="#education"]{display:none}
+  }
+  @media(max-width:420px){.nav-cta{display:none}}
+
+  /* ---------- Hero ---------- */
+  .hero{background:radial-gradient(120% 170% at 10% -20%,var(--navy-2) 0%,var(--navy) 55%,#040a18 100%);color:var(--navy-ink);position:relative;overflow:hidden}
+  .hero-art{position:absolute;top:0;right:-30px;height:100%;width:min(620px,80%);pointer-events:none;opacity:.55}
+  .hero-inner{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:clamp(44px,6.5vw,76px) 24px clamp(48px,6vw,72px)}
+  .hero-eyebrow{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#fff;margin:0 0 30px}
+  .hero-eyebrow::after{content:"";display:inline-block;vertical-align:middle;width:44px;height:1px;background:var(--coral);margin-left:14px}
+  .hero-grid{display:grid;grid-template-columns:1.3fr .95fr;gap:clamp(26px,4vw,52px);align-items:start}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+  .name{font-family:"Archivo",Inter,sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(52px,9.2vw,108px);line-height:.98;letter-spacing:-.01em;margin:0;color:var(--coral)}
+  .pill-status{display:inline-flex;align-items:center;gap:8px;font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.06em;padding:7px 12px;border-radius:999px;border:1px solid var(--navy-line);background:rgba(255,255,255,.05);color:var(--navy-dim);margin:26px 0 0}
+  .pill-status .dot-live{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(63,224,197,.16);flex:0 0 auto}
+  .role-line{margin:18px 0 0;font-size:clamp(17px,2.2vw,21px);line-height:1.45;color:var(--navy-ink);font-weight:500}
+  .role-line strong{color:var(--mint);font-weight:700}
+  .hero-sum{margin:14px 0 0;font-size:15px;line-height:1.75;color:var(--navy-dim);max-width:56ch}
+  .hero-sum strong{color:var(--navy-ink)}
+  .contact-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border-radius:999px;font-size:13.5px;font-weight:600;text-decoration:none;border:1px solid var(--navy-line);background:rgba(255,255,255,.04);color:var(--navy-ink);transition:border-color .18s,background .18s,transform .18s}
+  .chip:hover{border-color:rgba(63,224,197,.55);background:rgba(255,255,255,.08);transform:translateY(-1px)}
+  .chip.primary{background:var(--coral);border-color:var(--coral);color:#fff}
+  .chip.primary:hover{background:#ff8266}
+  .chip svg{width:15px;height:15px;flex:0 0 auto}
+  .hero-side{display:flex;flex-direction:column;gap:14px}
+
+  /* Terminal strip inside hero */
+  .term{background:#050d1d;color:#d7e9f5;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.10);box-shadow:0 18px 40px -18px rgba(0,0,0,.6)}
+  .term-head{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
+  .d{width:10px;height:10px;border-radius:50%}
+  .term-head span.file{margin-left:7px;font-family:"JetBrains Mono",monospace;font-size:11px;opacity:.6}
+  .term-body{padding:16px 18px 18px;font-family:"JetBrains Mono",monospace;font-size:12.6px;line-height:1.8;overflow-x:auto}
+  .term-body .p{color:var(--mint)}
+  .term-body .dim{color:#8fb0d8}
+  .cursor{display:inline-block;width:7px;height:14px;background:var(--mint);vertical-align:-2px;margin-left:2px;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  @media (prefers-reduced-motion: reduce){.cursor{animation:none}}
+
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .stat{background:rgba(255,255,255,.04);border:1px solid var(--navy-line);border-radius:14px;padding:15px 16px}
+  .stat b{display:block;font-family:"Archivo",Inter,sans-serif;font-weight:800;font-size:24px;line-height:1.05;color:#fff;letter-spacing:-.01em}
+  .stat span{display:block;margin-top:5px;font-size:11.5px;line-height:1.45;color:var(--navy-dim)}
+
+  /* ---------- Icon band ---------- */
+  .iconband{background:var(--band);border-bottom:1px solid var(--line)}
+  .iconband-inner{max-width:1080px;margin:0 auto;padding:36px 24px 40px}
+  .icon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:860px){.icon-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:460px){.icon-grid{grid-template-columns:1fr}}
+  .icon-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 20px;box-shadow:var(--shadow-sm);transition:border-color .22s,box-shadow .22s,transform .22s}
+  .icon-card:hover{border-color:var(--line-strong);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+  .icon-card svg{width:46px;height:46px;display:block;color:var(--ink)}
+  .icon-card h3{font-family:"Archivo",Inter,sans-serif;font-weight:700;font-size:15px;letter-spacing:-.01em;margin:14px 0 0;color:var(--ink)}
+  .icon-card p{font-size:13px;line-height:1.55;color:var(--muted);margin:5px 0 0}
+
+  /* ---------- Sections ---------- */
+  section{padding:58px 0 6px}
+  .sec-label{display:flex;align-items:baseline;gap:16px;margin-bottom:10px}
+  .sec-num{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:600;color:var(--coral-strong);letter-spacing:.08em}
+  .sec-label h2{font-family:"Archivo",Inter,sans-serif;font-weight:800;font-size:clamp(24px,3.4vw,32px);letter-spacing:-.015em;margin:0;line-height:1.1;color:var(--ink)}
+  .sec-intro{font-size:15px;color:var(--muted);margin:0 0 24px;line-height:1.7;max-width:68ch}
+  .sec-rule{height:1px;background:var(--line);margin:0 0 26px}
+  .feat-tag{font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--coral-strong);background:var(--coral-soft);border:1px solid var(--coral-line);padding:5px 10px;border-radius:999px;white-space:nowrap;align-self:center}
+  .project.featured{border-color:var(--coral-line);box-shadow:var(--shadow-md)}
+
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-sm);transition:border-color .22s,box-shadow .22s,transform .22s}
+  .card:hover{border-color:var(--line-strong);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+
+  /* Skills */
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.skills-grid{grid-template-columns:1fr}}
+  .skill-group h3{margin:0 0 12px;font-size:14.5px;font-weight:700;display:flex;align-items:center;gap:9px;letter-spacing:-.01em}
+  .skill-group h3 .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);flex:0 0 auto}
+  .tag-list{display:flex;flex-wrap:wrap;gap:7px;margin:0;padding:0;list-style:none}
+  .tag-list li{font-size:13px;line-height:1.4;padding:7px 11px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2)}
+  .tag-list li.hl{background:var(--teal-soft);border-color:var(--teal-line);color:var(--teal-strong);font-weight:600}
+  .skill-note{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.7}
+
+  .strengths{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+  @media(max-width:720px){.strengths{grid-template-columns:repeat(2,1fr)}}
+  .strength{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;text-align:center;box-shadow:var(--shadow-sm);transition:border-color .22s,box-shadow .22s,transform .22s}
+  .strength:hover{border-color:var(--line-strong);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+  .strength b{font-size:13.5px;display:block;line-height:1.3}
+  .strength span{font-size:12px;color:var(--muted);display:block;margin-top:4px;line-height:1.45}
+
+  /* Projects */
+  .project{border:1px solid var(--line);background:var(--surface);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);transition:border-color .22s,box-shadow .22s}
+  .project:hover{border-color:var(--line-strong)}
+  .project.open{border-color:var(--teal-line);box-shadow:var(--shadow-md)}
+  .project.featured.open{border-color:var(--coral-line)}
+  .project + .project{margin-top:12px}
+  .project-head{width:100%;text-align:left;background:none;border:0;padding:20px 22px;display:flex;justify-content:space-between;gap:16px;cursor:pointer;color:inherit;align-items:flex-start;font:inherit}
+  .project-head h3{margin:0;font-size:16px;line-height:1.35;letter-spacing:-.01em}
+  .project-head p{margin:5px 0 0;font-size:13.5px;color:var(--muted);line-height:1.55}
+  .project-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px}
+  .pill{font-family:"JetBrains Mono",monospace;font-size:11px;padding:4px 8px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2)}
+  .pill.accent{background:var(--teal-soft);border-color:var(--teal-line);color:var(--teal-strong);font-weight:600}
+  .chev{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--surface-2);display:grid;place-items:center;flex:0 0 auto;font-size:18px;line-height:1;transition:transform .25s,background .25s,color .25s;color:var(--ink-2)}
+  .project-head:hover .chev{border-color:var(--teal-line);color:var(--teal-strong)}
+  .project.open .chev{transform:rotate(45deg);background:var(--teal);border-color:var(--teal);color:#fff}
+  .project.featured.open .chev{background:var(--coral);border-color:var(--coral)}
+  .project-body{display:none;padding:2px 22px 22px;border-top:1px solid var(--line)}
+  .project.open .project-body{display:block}
+  .project-body p{font-size:14.5px;color:var(--ink-2);margin:16px 0 0;line-height:1.75}
+
+  /* Case study (NIST CSF breakdown) */
+  .pill.case{background:var(--coral-soft);border-color:var(--coral-line);color:var(--coral-strong);font-weight:600}
+  .case-summary{font-size:14.5px;color:var(--ink-2);margin:16px 0 0;line-height:1.75}
+  .csf{margin:18px 0 0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .csf-head{padding:11px 16px;background:var(--surface-2);border-bottom:1px solid var(--line);font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+  .csf-row{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:14px 16px}
+  .csf-row + .csf-row{border-top:1px solid var(--line)}
+  .csf-fn{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-strong);background:var(--teal-soft);border:1px solid var(--teal-line);border-radius:999px;padding:5px 10px;height:fit-content;text-align:center;white-space:nowrap}
+  .csf-row p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.7}
+  .case-note{margin:16px 0 0;font-size:12.5px;color:var(--muted);line-height:1.6}
+  @media(max-width:560px){.csf-row{grid-template-columns:1fr;gap:9px}.csf-fn{justify-self:start}}
+
+  /* Experience timeline */
+  .timeline{position:relative;padding-left:26px}
+  .timeline::before{content:"";position:absolute;left:6px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--teal-line),var(--line));border-radius:2px}
+  .role{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow-sm);transition:border-color .22s,box-shadow .22s,transform .22s}
+  .role:hover{border-color:var(--line-strong);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+  .role + .role{margin-top:14px}
+  .role::before{content:"";position:absolute;left:-25px;top:28px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:3px solid var(--coral)}
+  .role-top{display:flex;justify-content:space-between;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+  .role h3{margin:0;font-size:16px;line-height:1.35;letter-spacing:-.01em}
+  .role h3 span{font-weight:500;color:var(--ink-2)}
+  .role-date{font-family:"JetBrains Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.04em;white-space:nowrap;color:var(--teal-strong);background:var(--teal-soft);border:1px solid var(--teal-line);padding:5px 10px;border-radius:999px}
+  .role ul{margin:12px 0 0;padding-left:18px;color:var(--ink-2);font-size:14.5px;line-height:1.7}
+  .role li{margin:5px 0}
+  .role li::marker{color:var(--coral)}
+
+  /* Education */
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){.edu-grid{grid-template-columns:1fr}}
+  .edu{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-sm);transition:border-color .22s,box-shadow .22s,transform .22s;display:flex;flex-direction:column}
+  .edu:hover{border-color:var(--line-strong);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+  .edu-top{display:flex;justify-content:space-between;gap:10px 14px;flex-wrap:wrap;align-items:flex-start}
+  .edu h3{margin:0;font-size:15.5px;line-height:1.4;letter-spacing:-.01em}
+  .edu h3 span{font-weight:500;color:var(--ink-2)}
+  .edu-date{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.04em;white-space:nowrap;color:var(--muted);padding-top:3px}
+  .edu ul{margin:12px 0 0;padding-left:18px;color:var(--ink-2);font-size:14px;line-height:1.7}
+  .edu li{margin:5px 0}
+  .edu li::marker{color:var(--teal)}
+  .badge{display:inline-flex;align-self:flex-start;margin-top:auto;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 11px;border-radius:999px;background:var(--coral-soft);color:var(--coral-strong);border:1px solid var(--coral-line)}
+  .edu .badge{margin-top:16px}
+  .badge.done{background:var(--teal-soft);color:var(--teal-strong);border-color:var(--teal-line)}
+
+  /* CTA */
+  .cta{margin:58px 0 6px;background:radial-gradient(130% 170% at 8% -10%,var(--navy-2) 0%,var(--navy) 55%,#040a18 100%);color:var(--navy-ink);border-radius:24px;padding:clamp(28px,4.5vw,46px);display:grid;grid-template-columns:1.25fr .85fr;gap:clamp(20px,4vw,40px);position:relative;overflow:hidden;box-shadow:var(--shadow-md)}
+  .cta::after{content:"";position:absolute;inset:0;background:radial-gradient(520px 240px at 92% -10%,rgba(63,224,197,.14),transparent 62%);pointer-events:none}
+  .cta > *{position:relative;z-index:1}
+  @media(max-width:760px){.cta{grid-template-columns:1fr}}
+  .cta-kicker{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin:0}
+  .cta h2{font-family:"Archivo",Inter,sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,36px);line-height:1.12;margin:12px 0 0;letter-spacing:-.015em;color:#fff}
+  .cta p{color:var(--navy-dim);line-height:1.7;font-size:14.5px;margin:14px 0 0}
+  .cta-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+  .btn{appearance:none;border:1px solid var(--navy-line);background:rgba(255,255,255,.05);color:var(--navy-ink);padding:11px 17px;border-radius:999px;font-weight:600;font-size:13.5px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;cursor:pointer;transition:background .18s,border-color .18s,transform .18s}
+  .btn:hover{transform:translateY(-1px);border-color:rgba(63,224,197,.5)}
+  .btn-light{background:var(--coral);color:#fff;border-color:var(--coral)}
+  .btn-light:hover{background:#ff8266}
+  .cta-note{font-size:12px!important;color:var(--navy-dim)!important;opacity:.75;margin-top:14px!important}
+  .cta-box{border:1px solid var(--navy-line);background:rgba(255,255,255,.04);border-radius:16px;padding:20px}
+  .cta-box .box-label{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy-dim)}
+  .cta-box ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:11px;font-size:13.5px;line-height:1.55}
+  .cta-box li{display:flex;gap:10px}
+  .cta-box li::before{content:"✓";color:var(--mint);font-weight:700;flex:0 0 auto}
+
+  footer{padding:26px 0 40px;border-top:1px solid var(--line);margin-top:40px;display:flex;justify-content:space-between;gap:10px 20px;flex-wrap:wrap;color:var(--muted);font-size:12.5px}
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--teal-strong)}
+
+  /* Reveal — content is never hidden; the scroll animation only nudges position */
+  .reveal{transform:none}
+  .reveal.armed{transform:translateY(14px);transition:transform .55s ease}
+  .reveal.armed.visible{transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .reveal.armed{transform:none;transition:none}
+    .card:hover,.strength:hover,.role:hover,.edu:hover,.icon-card:hover,.chip:hover,.btn:hover{transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#top" aria-label="Israel Oluwatona — back to top">
+      <span class="brand-mark">IO</span>
+      <span class="brand-text">
+        <span class="brand-name">Israel Oluwatona</span><br>
+        <span class="brand-sub">Cybersecurity Analyst</span>
+      </span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#skills">Skills</a>
+      <a href="#case-study">Case Study</a>
+      <a href="#summary">Summary</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a class="nav-cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hero-art" viewBox="0 0 620 540" fill="none" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+      <g stroke="#3fe0c5" stroke-opacity=".38" stroke-width="1.4">
+        <circle cx="448" cy="216" r="56"/>
+        <circle cx="448" cy="216" r="108"/>
+        <circle cx="448" cy="216" r="162"/>
+        <circle cx="448" cy="216" r="216"/>
+        <path d="M448 0v432M236 216h424M300 68l296 296M596 68L300 364" stroke-opacity=".16"/>
+        <path d="M448 160v-34M492 240l34 10M404 196l-30-16" stroke-opacity=".5"/>
+      </g>
+      <g stroke="#3fe0c5" stroke-opacity=".5" stroke-width="1.4">
+        <path d="M40 470h120l24-24h84M40 500h70l20-16h120M560 470h40M520 500h80"/>
+        <path d="M96 60h88l22 22h60M60 96h44l18-14"/>
+      </g>
+      <g fill="#3fe0c5">
+        <circle cx="448" cy="216" r="4"/>
+        <circle cx="448" cy="126" r="3"/>
+        <circle cx="526" cy="250" r="3"/>
+        <circle cx="374" cy="180" r="3"/>
+        <circle cx="160" cy="446" r="3.5"/>
+        <circle cx="268" cy="446" r="3.5"/>
+        <circle cx="250" cy="484" r="3.5"/>
+        <circle cx="184" cy="82" r="3.5"/>
+      </g>
+      <g fill="#ff6a4d">
+        <circle cx="556" cy="108" r="4"/>
+        <circle cx="104" cy="470" r="0"/>
+        <circle cx="600" cy="470" r="3.5"/>
+      </g>
+      <circle cx="448" cy="216" r="86" stroke="#ff6a4d" stroke-opacity=".45" stroke-width="1.4" stroke-dasharray="4 7" fill="none"/>
+    </svg>
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Portfolio</p>
+      <div class="hero-grid">
+        <div>
+          <h1 class="name">ISRAEL<br>OLUWATONA</h1>
+          <p class="pill-status"><span class="dot-live"></span> Open to entry-level cybersecurity roles · Winder, GA</p>
+          <p class="role-line">Entry-level <strong>Cybersecurity Analyst</strong> — Merit America trainee, Google Cybersecurity Professional Certificate (expected 01/2027)</p>
+          <p class="hero-sum">Entry-level Cybersecurity Analyst with <strong>1.5+ years of experience in high-volume, fast-paced operational environments</strong>. Currently completing the Google Cybersecurity Professional Certificate, with working knowledge of Python, Linux, and SQL, and hands-on exposure to Splunk, Wireshark, tcpdump, and Suricata. Seeking an entry-level cybersecurity role where strong problem-solving and communication skills can be applied to help protect organizational systems and data.</p>
+          <div class="contact-row">
+            <a class="chip primary" href="mailto:Oluwatonai@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              Oluwatonai@gmail.com
+            </a>
+            <a class="chip" href="https://www.linkedin.com" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+              LinkedIn
+            </a>
+            <span class="chip" aria-label="Location: Winder, GA">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Winder, GA
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="term" aria-label="Tools snapshot">
+            <div class="term-head"><span class="d" style="background:#ff6a4d"></span><span class="d" style="background:#fbbf24"></span><span class="d" style="background:#3fe0c5"></span><span class="file">israel@portfolio: ~/skills</span></div>
+            <div class="term-body">
+              <div><span class="p">$</span> whoami <span class="dim">— entry-level cybersecurity analyst</span></div>
+              <div><span class="p">$</span> ls tools/ <span class="dim">→ Linux · Windows · SQL · Python · Splunk · Wireshark · tcpdump · Suricata</span></div>
+              <div><span class="p">$</span> cat status.txt <span class="dim">→ Google Cybersecurity Professional Certificate — Expected 01/2027</span></div>
+              <div><span class="p">$</span> <span id="typed"></span><span class="cursor" aria-hidden="true"></span></div>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>300+</b><span>returned units processed per shift at Amazon</span></div>
+            <div class="stat"><b>Jan 2027</b><span>Google Cybersecurity Certificate completion (Merit America)</span></div>
+            <div class="stat"><b>5</b><span>NIST CSF functions applied in the incident report case study</span></div>
+            <div class="stat"><b>20–25 hrs</b><span>of cybersecurity coursework sustained weekly</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ICON BAND -->
+  <div class="iconband">
+    <div class="iconband-inner">
+      <div class="icon-grid">
+        <article class="icon-card reveal">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M13 32h21a7 7 0 0 0 1.2-13.9A10.5 10.5 0 0 0 15.3 20 6.8 6.8 0 0 0 13 32Z"/>
+            <path d="M24 27l5.5 1.8v3.4c0 3.4-2.3 5.5-5.5 6.8-3.2-1.3-5.5-3.4-5.5-6.8v-3.4L24 27Z" stroke="#ff6a4d" fill="#ffe9e2"/>
+            <path d="M21.8 33.2l1.8 1.8 3-3.2" stroke="#ff6a4d"/>
+          </svg>
+          <h3>Network Security</h3>
+          <p>NDR, firewalls, and IDS/IPS — Suricata, Wireshark, tcpdump</p>
+        </article>
+        <article class="icon-card reveal">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="24" cy="24" r="13"/>
+            <path d="M24 5v7M24 36v7M5 24h7M36 24h7"/>
+            <ellipse cx="24" cy="26" rx="4.6" ry="6.4" stroke="#ff6a4d" fill="#ffe9e2"/>
+            <path d="M21 21.5 18 17M27 21.5 30 17M24 19.6v-3M19.8 26h-4M28.2 26h4M20.5 31.5 17 35M27.5 31.5 31 35" stroke="#ff6a4d"/>
+          </svg>
+          <h3>Threat &amp; Log Analysis</h3>
+          <p>Alert triage and log review with Splunk and IDS/IPS tooling</p>
+        </article>
+        <article class="icon-card reveal">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="13" y="7" width="22" height="34" rx="3"/>
+            <path d="M19 7.5V5.8A2.3 2.3 0 0 1 21.3 3.5h5.4A2.3 2.3 0 0 1 29 5.8v1.7"/>
+            <rect x="18" y="20" width="12" height="9.5" rx="2" stroke="#ff6a4d" fill="#ffe9e2"/>
+            <path d="M21 20v-2.4a3 3 0 0 1 6 0V20" stroke="#ff6a4d"/>
+            <circle cx="24" cy="24.6" r="1.4" fill="#ff6a4d" stroke="none"/>
+            <path d="M24 25.8v1.4" stroke="#ff6a4d"/>
+            <path d="M18 35.5h12"/>
+          </svg>
+          <h3>Frameworks &amp; Controls</h3>
+          <p>NIST CSF and ISO 27001 — Identify, Protect, Detect, Respond, Recover</p>
+        </article>
+        <article class="icon-card reveal">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="17" cy="17" r="5.5"/>
+            <path d="M5.5 35c1-6 5.4-9.4 11.5-9.4 3.4 0 6.3 1.1 8.3 3.2"/>
+            <circle cx="33.5" cy="13.5" r="4.2"/>
+            <path d="M30 25.6c1.9-1.2 4.2-1.9 6.8-1.9 4.9 0 8.4 2.7 9.4 7.5" stroke-opacity=".55"/>
+            <g stroke="#ff6a4d">
+              <circle cx="36" cy="33" r="4.6" fill="#ffe9e2"/>
+              <path d="M36 25.9v3M36 37.1v3M28.9 33h3M40.1 33h3M31 28l2.1 2.1M41 28l-2.1 2.1M31 38l2.1-2.1M41 38l-2.1-2.1"/>
+            </g>
+          </svg>
+          <h3>Security Operations</h3>
+          <p>Incident handling and SOC fundamentals from hands-on coursework</p>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+  <!-- RELEVANT SKILLS & EXPERTISE -->
+  <section id="skills">
+    <div class="sec-label"><span class="sec-num">01</span><h2>Relevant Skills &amp; Expertise</h2><span class="feat-tag">Featured</span></div>
+    <div class="sec-rule"></div>
+
+    <div class="skills-grid">
+      <article class="card skill-group reveal">
+        <h3><span class="dot"></span> Tools / Languages</h3>
+        <ul class="tag-list">
+          <li class="hl">Linux</li><li class="hl">Windows</li><li class="hl">SQL (BigQuery, MySQL)</li><li class="hl">Python</li>
+          <li>SIEM tools (Splunk)</li><li>Network Protocol Analyzers (Wireshark, tcpdump)</li><li>IDS/IPS (Suricata)</li>
+        </ul>
+      </article>
+
+      <article class="card skill-group reveal">
+        <h3><span class="dot"></span> Security Practices</h3>
+        <ul class="tag-list">
+          <li class="hl">Information Security</li><li class="hl">Network Security (NDR)</li><li>Vulnerability Assessment</li>
+          <li>Threat Analysis (IDS/IPS)</li><li>Log Analysis</li><li>Security Frameworks and Controls (NIST, ISO 27001)</li>
+        </ul>
+      </article>
+
+      <article class="card skill-group reveal">
+        <h3><span class="dot"></span> Software Platforms</h3>
+        <ul class="tag-list">
+          <li>Google Workspace</li><li>Slack</li><li>GenAI</li><li>Inventory / Warehouse Management Systems</li>
+        </ul>
+      </article>
+
+      <article class="card skill-group reveal">
+        <h3><span class="dot"></span> How this maps to the work</h3>
+        <p class="skill-note">Same toolset named on the résumé — practiced in the TryHackMe rooms below and in Merit America coursework: Linux and Windows fundamentals, log analysis with Splunk, packet analysis with Wireshark/tcpdump, and IDS concepts with Suricata.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FEATURED CASE STUDY -->
+  <section id="case-study">
+    <div class="sec-label"><span class="sec-num">02</span><h2>Incident Report Case Study</h2><span class="feat-tag">Featured</span></div>
+    <div class="sec-rule"></div>
+    <p class="sec-intro">A coursework incident report written up as a full case study, mapped end to end against the NIST Cybersecurity Framework. Tap the case study to expand the complete write-up.</p>
+
+    <div class="project featured open reveal">
+      <button class="project-head" aria-expanded="true">
+        <div>
+          <h3>Incident Report Analysis — ICMP Flood DDoS</h3>
+          <p>A network-wide outage traced to a distributed denial-of-service attack, documented end to end against the NIST Cybersecurity Framework</p>
+          <div class="project-meta"><span class="pill case">Case Study</span><span class="pill accent">NIST CSF</span><span class="pill">DDoS / ICMP Flood</span><span class="pill">Firewall</span><span class="pill">IDS/IPS</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p class="case-summary"><strong>Summary:</strong> The company experienced a security event when all network services suddenly stopped responding. The cybersecurity team found the disruption was caused by a distributed denial-of-service (DDoS) attack through a flood of incoming ICMP packets. The team responded by blocking the attack and stopping all non-critical network services, so that critical network services could be restored.</p>
+        <div class="csf">
+          <div class="csf-head">NIST Cybersecurity Framework — function by function</div>
+          <div class="csf-row"><span class="csf-fn">Identify</span><p>A malicious actor or actors targeted the company with an ICMP flood attack. The entire internal network was affected. All critical network resources needed to be secured and restored to a functioning state.</p></div>
+          <div class="csf-row"><span class="csf-fn">Protect</span><p>The cybersecurity team implemented a new firewall rule to limit the rate of incoming ICMP packets and an IDS/IPS system to filter out some ICMP traffic based on suspicious characteristics.</p></div>
+          <div class="csf-row"><span class="csf-fn">Detect</span><p>The cybersecurity team configured source IP address verification on the firewall to check for spoofed IP addresses on incoming ICMP packets and implemented network monitoring software to detect abnormal traffic patterns.</p></div>
+          <div class="csf-row"><span class="csf-fn">Respond</span><p>For future security events, the cybersecurity team will isolate affected systems to prevent further disruption to the network. They will attempt to restore any critical systems and services that were disrupted by the event. Then, the team will analyze network logs to check for suspicious and abnormal activity. The team will also report all incidents to upper management and appropriate legal authorities, if applicable.</p></div>
+          <div class="csf-row"><span class="csf-fn">Recover</span><p>To recover from a DDoS attack by ICMP flooding, access to network services needs to be restored to a normal functioning state. In the future, external ICMP flood attacks can be blocked at the firewall. Then, all non-critical network services should be stopped to reduce internal network traffic. Next, critical network services should be restored first. Finally, once the flood of ICMP packets has timed out, all non-critical network systems and services can be brought back online.</p></div>
+        </div>
+        <p class="case-note">Incident report write-up from the Google Cybersecurity Professional Certificate coursework — applying the NIST CSF functions (Identify, Protect, Detect, Respond, Recover) to a coursework incident scenario.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <section id="summary">
+    <div class="sec-label"><span class="sec-num">03</span><h2>Professional Summary</h2></div>
+    <div class="sec-rule"></div>
+    <p class="sec-intro" style="font-size:16px;color:var(--ink-2);max-width:78ch">Entry-level Cybersecurity Analyst with <strong>1.5+ years of experience in high-volume, fast-paced operational environments</strong>. Currently completing the Google Cybersecurity Professional Certificate, with working knowledge of Python, Linux, and SQL, and hands-on exposure to Splunk, Wireshark, tcpdump, and Suricata. Seeking an entry-level cybersecurity role where strong problem-solving and communication skills can be applied to help protect organizational systems and data.</p>
+    <div class="strengths" aria-label="Strengths">
+      <div class="strength reveal"><b>Problem-Solving</b><span>Break complex issues into clear steps</span></div>
+      <div class="strength reveal"><b>Collaboration</b><span>Coordinate across teams and shifts</span></div>
+      <div class="strength reveal"><b>Attention to Detail</b><span>300+ units per shift, accurately tracked</span></div>
+      <div class="strength reveal"><b>Calmness Under Pressure</b><span>Steady in high-volume, fast-paced settings</span></div>
+    </div>
+  </section>
+
+  <!-- CYBERSECURITY PROJECTS -->
+  <section id="projects">
+    <div class="sec-label"><span class="sec-num">04</span><h2>Cybersecurity Projects</h2></div>
+    <div class="sec-rule"></div>
+    <p class="sec-intro">TryHackMe rooms: an interactive, gamified virtual environment used to build practical, hands-on skills. Tap an item to expand the full write-up.</p>
+
+    <div class="project reveal">
+      <button class="project-head" aria-expanded="false">
+        <div>
+          <h3>Linux Fundamentals (1, 2, &amp; 3) and Linux Strength Training</h3>
+          <p>Navigated directories and files, adjusted permissions, analyzed logs, explored common utilities</p>
+          <div class="project-meta"><span class="pill accent">TryHackMe</span><span class="pill">Linux</span><span class="pill">Permissions</span><span class="pill">Logs</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p>Navigated directories and files, adjusted permissions, analyzed logs, explored common utilities. Built day-to-day Linux fluency — the same Linux named under Tools/Languages on the résumé.</p>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <button class="project-head" aria-expanded="false">
+        <div>
+          <h3>Intro to Logs and Log Analysis</h3>
+          <p>Identified log types, located logs, employed regular expressions (RegEx), and utilized command line and CyberChef for effective log analysis</p>
+          <div class="project-meta"><span class="pill accent">TryHackMe</span><span class="pill">Log Analysis</span><span class="pill">RegEx</span><span class="pill">CyberChef</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p>Identified log types, located logs, employed regular expressions (RegEx), and utilized command line and CyberChef for effective log analysis — the same log analysis named under Security Practices on the résumé.</p>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <button class="project-head" aria-expanded="false">
+        <div>
+          <h3>Wireshark Basics and Wireshark 101</h3>
+          <p>Gained proficiency in packet dissection, navigation, and filtering techniques; analyzed ARP, ICMP, TCP, DNS, HTTP, and HTTPS traffic for network troubleshooting and security analysis</p>
+          <div class="project-meta"><span class="pill accent">TryHackMe</span><span class="pill">Wireshark</span><span class="pill">tcpdump</span><span class="pill">Packet Analysis</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p>Gained proficiency in packet dissection, navigation, and filtering techniques; analyzed ARP, ICMP, TCP, DNS, HTTP, and HTTPS traffic for network troubleshooting and security analysis — the same packet analysis named under Tools/Languages on the résumé (Wireshark, tcpdump).</p>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <button class="project-head" aria-expanded="false">
+        <div>
+          <h3>Windows Fundamentals (1, 2, &amp; 3) and Windows Forensics (1 &amp; 2)</h3>
+          <p>Built Windows fundamentals: file systems (FAT/NTFS), UAC, registry, firewall, and system configuration; practiced registry forensics and file recovery</p>
+          <div class="project-meta"><span class="pill accent">TryHackMe</span><span class="pill">Windows</span><span class="pill">Forensics</span><span class="pill">Registry</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p>Built Windows fundamentals: file systems (FAT/NTFS), UAC, registry, firewall, and system configuration; practiced registry forensics and file recovery — the same Windows named under Tools/Languages on the résumé.</p>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <button class="project-head" aria-expanded="false">
+        <div>
+          <h3>Splunk Basics, Incident Handling with Splunk, and Splunk (2 &amp; 3)</h3>
+          <p>Developed skills in navigating Splunk; conducting incident handling using Splunk; participated in the Boss of the SOC investigation for security analysis</p>
+          <div class="project-meta"><span class="pill accent">TryHackMe</span><span class="pill">Splunk</span><span class="pill">SIEM</span><span class="pill">Boss of the SOC</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p>Developed skills in navigating Splunk; conducting incident handling using Splunk; participated in the Boss of the SOC investigation for security analysis — the same SIEM work named under Tools/Languages on the résumé (Splunk).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL EXPERIENCE -->
+  <section id="experience">
+    <div class="sec-label"><span class="sec-num">05</span><h2>Professional Experience</h2></div>
+    <div class="sec-rule"></div>
+
+    <div class="timeline">
+      <article class="role reveal">
+        <div class="role-top">
+          <h3>Warehouse Associate <span>• Amazon, Pendergrass, GA</span></h3>
+          <div class="role-date">08/2025 - Present</div>
+        </div>
+        <ul>
+          <li>Process 300+ returned units per shift at a high-volume customer fulfillment center, inspecting items and sorting them for restock, repackaging, or disposal per quality guidelines</li>
+          <li>Scan and track returns through the facility’s inventory system to keep records accurate and support daily processing targets</li>
+          <li>Coordinate with teammates across shifts to keep return volume moving during peak periods while following all safety procedures</li>
+        </ul>
+      </article>
+
+      <article class="role reveal">
+        <div class="role-top">
+          <h3>Kitchen Team Member <span>• Chick-fil-A, Monroe, GA</span></h3>
+          <div class="role-date">03/2025 - 07/2025</div>
+        </div>
+        <ul>
+          <li>Prepared sandwiches and menu items in a fast-paced kitchen, following recipes and food safety standards to keep orders accurate and on time</li>
+          <li>Coordinated with front-of-house staff during peak rush periods to ensure short ticket times</li>
+          <li>Maintained cleanliness and organization of workstations, in accordance with food safety, health and sanitation guidelines</li>
+        </ul>
+      </article>
+
+      <article class="role reveal">
+        <div class="role-top">
+          <h3>Teacher <span>• Confidence Academy, Ibadan, Oyo State, Nigeria</span></h3>
+          <div class="role-date">01/2018 - 12/2020</div>
+        </div>
+        <ul>
+          <li>Taught Mathematics, Agricultural Science, and Basic Science to students ages 7-14, breaking complex topics into clear, engaging lessons</li>
+          <li>Mentored students in and out of the classroom; many have gone on to universities across Nigeria, with several now graduated</li>
+        </ul>
+      </article>
+
+      <article class="role reveal">
+        <div class="role-top">
+          <h3>Teacher <span>• Heritage Foundation Schools, Ibadan, Oyo State, Nigeria</span></h3>
+          <div class="role-date">01/2021 - 12/2021</div>
+        </div>
+        <ul>
+          <li>Delivered lessons in Mathematics, Agricultural Science, and Basic Science for students ages 7-14, adapting teaching to different learning levels</li>
+          <li>Earned a reputation for dedication to student growth, guiding students academically and personally</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDUCATION, CERTIFICATES, & CERTIFICATIONS -->
+  <section id="education">
+    <div class="sec-label"><span class="sec-num">06</span><h2>Education, Certificates, &amp; Certifications</h2></div>
+    <div class="sec-rule"></div>
+
+    <div class="edu-grid">
+      <article class="edu reveal">
+        <div class="edu-top">
+          <h3>Google Cybersecurity Professional Certificate <span>• Merit America, Virtual</span></h3>
+          <div class="edu-date">Expected 01/2027</div>
+        </div>
+        <ul>
+          <li>Developed a comprehensive understanding of cybersecurity’s role in organizational security by using Linux, SQL, Python, SIEM tools, IDS, and network analyzers to identify and mitigate risks in hands-on projects, including security audits, incident responses, and vulnerability analyses</li>
+          <li>Partnered with a Career Coach through biweekly 1:1s and weekly cohort workshops, sustaining 20-25 hrs/week of coursework while independently managing scheduling to meet program deadlines</li>
+        </ul>
+        <span class="badge">In Progress · Expected 01/2027</span>
+      </article>
+
+      <article class="edu reveal">
+        <div class="edu-top">
+          <h3>Associate Degree in Agricultural Science Education <span>• Emmanuel Alayande College of Education, Oyo, Nigeria</span></h3>
+          <div class="edu-date">12/2018</div>
+        </div>
+        <ul>
+          <li>Trained in crop production, animal husbandry, soil science, and farm management, with professional preparation in lesson planning and classroom management</li>
+        </ul>
+        <span class="badge done">Completed · 12/2018</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact / availability -->
+  <div class="cta reveal" id="contact">
+    <div>
+      <p class="cta-kicker">Seeking entry-level cybersecurity role</p>
+      <h2>Protecting systems<br>and data — starting<br>with strong fundamentals.</h2>
+      <p>Winder, GA based, with working knowledge of Python, Linux, and SQL and hands-on exposure to Splunk, Wireshark, tcpdump, and Suricata. This portfolio mirrors my résumé so you can verify every project and role in one place.</p>
+      <div class="cta-actions">
+        <a class="btn btn-light" href="mailto:Oluwatonai@gmail.com">Oluwatonai@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <p class="cta-note">LinkedIn button points to linkedin.com — swap in your personal profile URL when you add this link to your résumé headline.</p>
+    </div>
+    <div class="cta-box">
+      <div class="box-label">Résumé at a glance</div>
+      <ul>
+        <li>Google Cybersecurity Professional Certificate — Expected 01/2027 (Merit America)</li>
+        <li>Incident report case study — ICMP flood DDoS mapped to all five NIST CSF functions</li>
+        <li>Amazon Warehouse Associate — 300+ returned units per shift (08/2025 - Present)</li>
+        <li>Teaching foundation: Mathematics, Agricultural Science, Basic Science (2018-2021)</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Israel Oluwatona · Winder, GA · <a href="mailto:Oluwatonai@gmail.com">Oluwatonai@gmail.com</a></span>
+    <span><a href="#top">Back to top ↑</a></span>
+  </footer>
+  </div>
+</main>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Project accordion
+  document.querySelectorAll('.project-head').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var proj = btn.closest('.project');
+      var open = proj.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  // Terminal typing — résumé tool names only
+  var phrases = [
+    "splunk search index=* | stats count by sourcetype",
+    "wireshark filter: tcp.port == 443",
+    "tcpdump -i eth0 -nn host 10.0.0.15",
+    "python3 log_parser.py --file auth.log"
+  ];
+  var el = document.getElementById('typed');
+  var pi = 0, ci = 0, del = false;
+  function tick(){
+    if(!el) return;
+    var w = phrases[pi];
+    if(!del){
+      ci++; el.textContent = w.slice(0, ci);
+      if(ci === w.length){ del = true; setTimeout(tick, 1500); return; }
+      setTimeout(tick, 52);
+    } else {
+      ci--; el.textContent = w.slice(0, ci);
+      if(ci === 0){ del = false; pi = (pi + 1) % phrases.length; setTimeout(tick, 320); return; }
+      setTimeout(tick, 26);
+    }
+  }
+  if(el){
+    if(reduceMotion){ el.textContent = phrases[0]; }
+    else { tick(); }
+  }
+
+  // Reveal on scroll — arm only elements below the fold, and only when motion is allowed;
+  // anything already in view (or everything, if the observer never fires) stays visible.
+  var revealEls = document.querySelectorAll('.reveal');
+  if(!reduceMotion && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, {threshold: .06, rootMargin: '0px 0px -6% 0px'});
+    revealEls.forEach(function(n){
+      var r = n.getBoundingClientRect();
+      if(r.top > window.innerHeight * 0.92){ n.classList.add('armed'); io.observe(n); }
+    });
+  }
+
+  // Scrollspy — highlight the nav link for the section in view
+  var navLinks = {};
+  document.querySelectorAll('.topbar nav a[href^="#"]').forEach(function(a){
+    navLinks[a.getAttribute('href').slice(1)] = a;
+  });
+  var spy = ('IntersectionObserver' in window) ? new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        Object.keys(navLinks).forEach(function(k){ navLinks[k].classList.remove('active'); });
+        var link = navLinks[e.target.id];
+        if(link) link.classList.add('active');
+      }
+    });
+  }, {rootMargin: '-38% 0px -55% 0px'}) : null;
+  if(spy){
+    ['skills','case-study','summary','projects','experience','education'].forEach(function(id){
+      var s = document.getElementById(id);
+      if(s) spy.observe(s);
+    });
+  }
+
+  // Smooth anchor offset for the sticky nav
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id && id.length > 1){
+        var t = document.querySelector(id);
+        if(t){ e.preventDefault(); window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 76, behavior: reduceMotion ? 'auto' : 'smooth'}); }
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
