@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light dark" />
 <link rel="icon" href="data:," />
 <title>Israel Oluwatona — Cybersecurity Portfolio</title>
-<meta name="description" content="Entry-level Cybersecurity Analyst portfolio for Israel Oluwatona — Merit America trainee, Google Cybersecurity Professional Certificate (expected 01/2027), with a NIST CSF incident report case study and hands-on coursework in Linux, Wireshark, Splunk, and Windows forensics." />
+<meta name="description" content="Entry-level Cybersecurity Analyst portfolio for Israel Oluwatona — Merit America trainee, Google Cybersecurity Professional Certificate (expected 01/2027), with a NIST CSF incident report case study, an Apply Filters to SQL Queries project, and hands-on coursework in Linux, Wireshark, Splunk, and Windows forensics." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -94,7 +94,7 @@
     .brand-mark{width:34px;height:34px;border-radius:10px}
     .topbar nav{flex-wrap:nowrap;gap:2px}
     .topbar nav a{padding:7px 9px;font-size:12.5px;white-space:nowrap}
-    .topbar nav a[href="#summary"],.topbar nav a[href="#education"]{display:none}
+    .topbar nav a[href="#summary"],.topbar nav a[href="#education"],.topbar nav a[href="#sql-project"]{display:none}
   }
   @media(max-width:420px){.nav-cta{display:none}}
 
@@ -186,6 +186,13 @@
   .journal-card p{margin:5px 0 0;font-size:13.5px;color:var(--muted);line-height:1.55;max-width:62ch}
   .journal-link{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:var(--teal-soft);border:1px solid var(--teal-line);color:var(--teal-strong);font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;transition:border-color .18s,background .18s,transform .18s}
   .journal-link:hover{border-color:var(--teal);transform:translateY(-1px)}
+  .subsection-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.subsection-grid{grid-template-columns:1fr}}
+  .subsection-card{display:flex;flex-direction:column;gap:0}
+  .subsection-card h3{margin:0;font-size:16px;line-height:1.35;letter-spacing:-.01em}
+  .subsection-card p{margin:8px 0 0;font-size:14px;color:var(--ink-2);line-height:1.65}
+  .subsection-card .subsection-actions{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .coming-soon-pill{display:inline-flex;align-items:center;padding:7px 12px;border-radius:999px;background:var(--surface-2);border:1px dashed var(--line-strong);color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
   .project{border:1px solid var(--line);background:var(--surface);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);transition:border-color .22s,box-shadow .22s}
   .project:hover{border-color:var(--line-strong)}
   .project.open{border-color:var(--teal-line);box-shadow:var(--shadow-md)}
@@ -217,6 +224,39 @@
   .csf-row p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.7}
   .case-note{margin:16px 0 0;font-size:12.5px;color:var(--muted);line-height:1.6}
   @media(max-width:560px){.csf-row{grid-template-columns:1fr;gap:9px}.csf-fn{justify-self:start}}
+
+  /* SQL project */
+  .sql-doc-bar{display:flex;justify-content:space-between;align-items:center;gap:14px 22px;flex-wrap:wrap;margin-bottom:16px}
+  .sql-doc-bar h3{margin:0;font-size:16px;line-height:1.35;letter-spacing:-.01em}
+  .sql-doc-bar p{margin:5px 0 0;font-size:13.5px;color:var(--muted);line-height:1.55;max-width:62ch}
+  .query-list{display:grid;gap:14px;margin-top:18px}
+  .query-item{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
+  .query-item h4{margin:0;padding:13px 16px 0;font-size:14.5px;line-height:1.4;letter-spacing:-.01em}
+  .query-item h4 span{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--teal-strong);margin-right:8px}
+  .query-code{margin:12px 16px 0;background:#050d1d;color:#d7e9f5;border-radius:10px;padding:13px 14px;font-family:"JetBrains Mono",monospace;font-size:12.8px;line-height:1.65;white-space:normal;overflow-wrap:anywhere;word-break:break-word}
+  .query-code .kw{color:#3fe0c5}
+  .query-item p{margin:10px 16px 16px;font-size:14px;color:var(--ink-2);line-height:1.7}
+  .sql-summary{margin:18px 0 0;padding:16px;border:1px solid var(--teal-line);background:var(--teal-soft);border-radius:14px}
+  .sql-summary strong{display:block;font-size:13px;letter-spacing:.02em;margin-bottom:6px}
+  .sql-summary p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.7}
+
+  /* Coursework project details */
+  .pill.done{background:var(--teal-soft);border-color:var(--teal-line);color:var(--teal-strong);font-weight:600}
+  .asset-list{display:grid;gap:12px;margin-top:16px}
+  .asset-item{border:1px solid var(--line);border-radius:12px;padding:15px 16px;background:var(--surface)}
+  .asset-item h5{margin:0;font-size:14.5px;line-height:1.4;letter-spacing:-.01em}
+  .asset-item p{margin:8px 0 0!important;font-size:13.5px;line-height:1.65}
+  .proj-table{width:100%;border-collapse:collapse;margin:16px 0 0;font-size:13.5px;line-height:1.55}
+  .proj-table th,.proj-table td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  .proj-table th{background:var(--surface-2);font-size:12px;font-weight:700;color:var(--ink)}
+  .proj-table td{color:var(--ink-2)}
+  .proj-table td.score{font-family:"JetBrains Mono",monospace;font-weight:700;color:var(--ink);white-space:nowrap;text-align:center}
+  .proj-table th.score-h{text-align:center}
+  .detail-list{margin:12px 0 0;padding-left:18px;color:var(--ink-2);font-size:14px;line-height:1.7}
+  .detail-list li{margin:5px 0}
+  .detail-list li::marker{color:var(--teal)}
+  .detail-label{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-strong);margin:18px 0 0}
+  @media(max-width:560px){.proj-table th,.proj-table td{padding:8px 9px;font-size:12.5px}}
 
   /* Experience timeline */
   .timeline{position:relative;padding-left:26px}
@@ -298,6 +338,7 @@
     <nav aria-label="Sections">
       <a href="#skills">Skills</a>
       <a href="#case-study">Case Study</a>
+      <a href="#sql-project">SQL Project</a>
       <a href="#summary">Summary</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
@@ -473,7 +514,7 @@
 
       <article class="card skill-group reveal">
         <h3><span class="dot"></span> How this maps to the work</h3>
-        <p class="skill-note">Same toolset named on the résumé — Linux and Windows fundamentals, log analysis with Splunk, packet analysis with Wireshark/tcpdump, and IDS concepts with Suricata, covered in Merit America coursework and in the planned TryHackMe labs below.</p>
+        <p class="skill-note">Same toolset named on the résumé — Linux and Windows fundamentals, log analysis with Splunk, packet analysis with Wireshark/tcpdump, and IDS concepts with Suricata, covered in Merit America coursework and in the completed and planned TryHackMe labs below.</p>
       </article>
     </div>
   </section>
@@ -508,9 +549,80 @@
 
   </section>
 
+  <!-- SQL PROJECT -->
+  <section id="sql-project">
+    <div class="sec-label"><span class="sec-num">03</span><h2>Apply Filters to SQL Queries</h2><span class="feat-tag">Completed Project</span></div>
+    <div class="sec-rule"></div>
+    <p class="sec-intro">A completed portfolio document from the Google Cybersecurity Professional Certificate — investigating login attempts and employee machines with SQL filters. Tap the project to expand all six queries and how each one works.</p>
+
+    <div class="card sql-doc-bar reveal">
+      <div>
+        <h3>Full portfolio document</h3>
+        <p>“Apply Filters to SQL Queries” — project description, the six queries with explanations, and summary, ready to share with employers and recruiters.</p>
+      </div>
+      <a class="journal-link" href="https://docs.google.com/document/d/1PDb2Ql4qp-Ne1piMxPoEkhWiELRm_Zmsyvjb8BreZ-M/edit" target="_blank" rel="noopener">Open the document ↗</a>
+    </div>
+
+    <div class="project open reveal">
+      <button class="project-head" aria-expanded="true">
+        <div>
+          <h3>SQL Investigation — Login Attempts &amp; Employee Machines</h3>
+          <p>Using AND, OR, NOT, and LIKE to pull exactly the records each part of the investigation needed from the log_in_attempts and employees tables</p>
+          <div class="project-meta"><span class="pill case">Completed</span><span class="pill accent">SQL</span><span class="pill">AND · OR · NOT</span><span class="pill">LIKE / Pattern Matching</span><span class="pill">Google Cybersecurity Certificate</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p><strong>Project description:</strong> As a security professional at a large organization, I investigated potential security issues involving login attempts and employee machines. Using SQL filters — AND, OR, NOT, and LIKE — I queried the log_in_attempts and employees tables to pull exactly the records each investigation needed. This project shows the six queries I ran and explains how each one works.</p>
+
+        <div class="query-list">
+          <article class="query-item">
+            <h4><span>QUERY 1</span>Retrieve after hours failed login attempts</h4>
+            <div class="query-code"><span class="kw">SELECT</span> * <span class="kw">FROM</span> log_in_attempts <span class="kw">WHERE</span> login_time &gt; '18:00' <span class="kw">AND</span> success = 0;</div>
+            <p>This finds failed logins that happened after business hours. AND means both conditions must be true: login_time later than 18:00, and success equal to 0 (a failed login). Filtering on time and success together narrows the results to the suspicious after-hours failures worth investigating.</p>
+          </article>
+
+          <article class="query-item">
+            <h4><span>QUERY 2</span>Retrieve login attempts on specific dates</h4>
+            <div class="query-code"><span class="kw">SELECT</span> * <span class="kw">FROM</span> log_in_attempts <span class="kw">WHERE</span> login_date = '2022-05-09' <span class="kw">OR</span> login_date = '2022-05-08';</div>
+            <p>This pulls all login attempts from 2022-05-09 — the day of the suspicious event — and the day before. OR returns a row when either condition is true, so both days come back in one result set. Both conditions are written out in full because SQL needs the column name on each side.</p>
+          </article>
+
+          <article class="query-item">
+            <h4><span>QUERY 3</span>Retrieve login attempts outside of Mexico</h4>
+            <div class="query-code"><span class="kw">SELECT</span> * <span class="kw">FROM</span> log_in_attempts <span class="kw">WHERE NOT</span> country <span class="kw">LIKE</span> 'MEX%';</div>
+            <p>This returns login attempts from everywhere except Mexico. The country column stores Mexico two ways — 'MEX' and 'MEXICO' — so LIKE with the pattern 'MEX%', where % matches any characters after MEX, catches both. NOT flips the match and excludes every row starting with MEX.</p>
+          </article>
+
+          <article class="query-item">
+            <h4><span>QUERY 4</span>Retrieve employees in Marketing — East building</h4>
+            <div class="query-code"><span class="kw">SELECT</span> * <span class="kw">FROM</span> employees <span class="kw">WHERE</span> department = 'Marketing' <span class="kw">AND</span> office <span class="kw">LIKE</span> 'East%';</div>
+            <p>This finds Marketing employees whose offices are in the East building (offices like East-170 or East-320), so their machines could be updated. AND requires both conditions: department must equal 'Marketing' and the office must start with 'East'. The 'East%' pattern catches every East office regardless of room number.</p>
+          </article>
+
+          <article class="query-item">
+            <h4><span>QUERY 5</span>Retrieve employees in Finance or Sales</h4>
+            <div class="query-code"><span class="kw">SELECT</span> * <span class="kw">FROM</span> employees <span class="kw">WHERE</span> department = 'Finance' <span class="kw">OR</span> department = 'Sales';</div>
+            <p>This pulls employees from either the Finance or the Sales department for a different security update. OR returns a row when at least one condition is true. Both conditions are written out completely — department = … on each side — because SQL can't guess the column from just one side.</p>
+          </article>
+
+          <article class="query-item">
+            <h4><span>QUERY 6</span>Retrieve all employees not in IT</h4>
+            <div class="query-code"><span class="kw">SELECT</span> * <span class="kw">FROM</span> employees <span class="kw">WHERE NOT</span> department = 'Information Technology';</div>
+            <p>This returns every employee except those in the Information Technology department, since IT already had this update. NOT negates the condition, so all rows where the department is anything other than 'Information Technology' come back.</p>
+          </article>
+        </div>
+
+        <div class="sql-summary">
+          <strong>Summary</strong>
+          <p>Across these six queries, I used AND to combine conditions, OR to include multiple values, NOT to exclude data, and LIKE with % to match patterns in text. Filtering by dates and times focused the investigation on the after-hours and event-day windows that mattered, and pattern matching handled real-world values like 'MEX' versus 'MEXICO'. Together, these filters turned two large tables into precise, investigation-ready answers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PROFESSIONAL SUMMARY -->
   <section id="summary">
-    <div class="sec-label"><span class="sec-num">03</span><h2>Professional Summary</h2></div>
+    <div class="sec-label"><span class="sec-num">04</span><h2>Professional Summary</h2></div>
     <div class="sec-rule"></div>
     <p class="sec-intro" style="font-size:16px;color:var(--ink-2);max-width:78ch">Entry-level Cybersecurity Analyst with <strong>1.5+ years of experience in high-volume, fast-paced operational environments</strong>. Currently completing the Google Cybersecurity Professional Certificate, with working knowledge of Python, Linux, and SQL, and hands-on exposure to Splunk, Wireshark, tcpdump, and Suricata. Seeking an entry-level cybersecurity role where strong problem-solving and communication skills can be applied to help protect organizational systems and data.</p>
     <div class="strengths" aria-label="Strengths">
@@ -523,20 +635,216 @@
 
   <!-- CYBERSECURITY PROJECTS -->
   <section id="projects">
-    <div class="sec-label"><span class="sec-num">04</span><h2>Planned Labs</h2></div>
+    <div class="sec-label"><span class="sec-num">05</span><h2>Cybersecurity Projects</h2></div>
     <div class="sec-rule"></div>
-    <p class="sec-intro">TryHackMe rooms on my roadmap — an interactive, gamified virtual environment for building practical, hands-on skills. These labs are planned, not yet completed. Tap an item to see what each one covers.</p>
+    <p class="sec-intro">Completed coursework projects from the Google Cybersecurity Professional Certificate, followed by TryHackMe labs — completed labs and planned labs are labeled separately. Tap an item to expand the details.</p>
 
     <div class="project reveal">
       <button class="project-head" aria-expanded="false">
         <div>
-          <h3>Linux Fundamentals (1, 2, &amp; 3) and Linux Strength Training</h3>
-          <p>Covers navigating directories and files, adjusting permissions, analyzing logs, and exploring common utilities</p>
-          <div class="project-meta"><span class="pill planned">Planned</span><span class="pill accent">TryHackMe</span><span class="pill">Linux</span><span class="pill">Permissions</span><span class="pill">Logs</span></div>
+          <h3>SQL Security Investigation — Apply Filters to SQL Queries</h3>
+          <p>Investigated login activity in MariaDB using AND, OR, NOT, and LIKE filters on the log_in_attempts and employees tables</p>
+          <div class="project-meta"><span class="pill done">Completed</span><span class="pill accent">SQL · MariaDB</span><span class="pill">AND · OR · NOT · LIKE</span><span class="pill">Google Cybersecurity Certificate</span></div>
         </div><span class="chev">+</span>
       </button>
       <div class="project-body">
-        <p>A planned lab track on day-to-day Linux fluency — navigating directories and files, adjusting permissions, analyzing logs, and using common utilities — building toward the Linux named under Tools/Languages on the résumé.</p>
+        <p>Coursework project from the Google Cybersecurity Professional Certificate. I queried the <strong>log_in_attempts</strong> and <strong>employees</strong> tables in MariaDB using AND, OR, NOT, and LIKE filters to investigate login activity and identify employees whose machines needed security updates. Each query is documented in the full SQL project above — what it does, how it works, and what it returned.</p>
+        <ul class="detail-list">
+          <li><strong>Failed logins after business hours:</strong> filtered for failed logins after 18:00 to isolate after-hours activity.</li>
+          <li><strong>Logins on specific dates:</strong> pulled login attempts for the dates under investigation.</li>
+          <li><strong>Logins outside Mexico:</strong> used NOT with LIKE to return logins originating outside Mexico, handling both “MEX” and “MEXICO” values.</li>
+          <li><strong>Employees needing updates:</strong> filtered employees by department and office to identify who needed machine security updates.</li>
+        </ul>
+        <p><a class="journal-link" href="#sql-project">See the full SQL project with all six queries ↑</a></p>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <button class="project-head" aria-expanded="false">
+        <div>
+          <h3>Vulnerability Assessment Report — Public Database Server</h3>
+          <p>Assessed the access controls of a public MySQL database server and scored three threats using NIST SP 800-30 Rev. 1</p>
+          <div class="project-meta"><span class="pill done">Completed</span><span class="pill accent">Vulnerability Assessment</span><span class="pill">NIST SP 800-30 Rev. 1</span><span class="pill">MySQL · Linux</span><span class="pill">Google Cybersecurity Certificate</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p>Coursework from the Google Cybersecurity Professional Certificate. A vulnerability assessment of a public database server, focused on its current access controls over a three-month assessment period, with risk analysis guided by <strong>NIST SP 800-30 Rev. 1</strong>.</p>
+
+        <p class="detail-label">System Description</p>
+        <p style="margin-top:8px">The server hardware consists of a powerful CPU processor and 128GB of memory. It runs on the latest version of the Linux operating system and hosts a MySQL database management system. It is configured with a stable network connection using IPv4 addresses and interacts with other servers on the network. Security measures include SSL/TLS encrypted connections.</p>
+
+        <p class="detail-label">Scope</p>
+        <p style="margin-top:8px">The scope of this vulnerability assessment relates to the current access controls of the system. The assessment covers a period of three months, from June to August. NIST SP 800-30 Rev. 1 is used to guide the risk analysis of the information system.</p>
+
+        <p class="detail-label">Purpose</p>
+        <p style="margin-top:8px">The database is valuable because employees use it every day to pull data and find customers. It needs to be secure to keep out threat actors who may try to take over the database through malicious attempts. If it were disabled, employees would be unable to access the data, work would stop, and customers could not be served properly. This assessment identifies the vulnerabilities in the database, how it can be accessed, and how it can be protected.</p>
+
+        <p class="detail-label">Risk Assessment</p>
+        <table class="proj-table">
+          <thead><tr><th scope="col">Threat source</th><th scope="col">Threat event</th><th scope="col" class="score-h">L</th><th scope="col" class="score-h">S</th><th scope="col" class="score-h">Risk</th></tr></thead>
+          <tbody>
+            <tr><td>Hacker</td><td>Obtain sensitive information via exfiltration</td><td class="score">2</td><td class="score">3</td><td class="score">6</td></tr>
+            <tr><td>Competitor</td><td>Obtain sensitive information via exfiltration</td><td class="score">3</td><td class="score">2</td><td class="score">6</td></tr>
+            <tr><td>Employee</td><td>Alter or delete critical information</td><td class="score">1</td><td class="score">3</td><td class="score">3</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:13px;color:var(--muted)">L = Likelihood, S = Severity, Risk = Likelihood × Severity. Each threat event is paired with a threat source that could realistically carry it out.</p>
+
+        <p class="detail-label">Approach</p>
+        <p style="margin-top:8px">Risks considered the data storage and management methods of the business. The likelihood of a threat occurrence and the impact of these potential events were weighed against the risks to day-to-day operational needs. I chose these three threats because they are the most severe. They are the most severe because they can shut down the database and also expose customer PII. They matter to the business because integrity must be upheld.</p>
+
+        <p class="detail-label">Remediation Strategy</p>
+        <p style="margin-top:8px">Implementation of authentication, authorization, and auditing mechanisms to ensure that only authorized users access the database server. This includes using strong passwords, role-based access controls, and multi-factor authentication to limit user privileges. Encryption of data in motion using TLS instead of SSL. IP allow-listing for corporate offices to prevent unauthorized access. Remote staff worldwide need private remote access, so only authorized accounts can reach the database and threat actors are kept out.</p>
+        <ul class="detail-list">
+          <li><strong>Authentication &amp; authorization:</strong> strong passwords, role-based access controls, and multi-factor authentication to limit user privileges.</li>
+          <li><strong>Auditing:</strong> authentication, authorization, and auditing mechanisms so only authorized users can access the database server.</li>
+          <li><strong>Encryption in transit:</strong> TLS instead of SSL for data in motion.</li>
+          <li><strong>Network access:</strong> IP allow-listing for corporate offices, plus private remote access for remote staff worldwide so only authorized accounts can reach the database.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <button class="project-head" aria-expanded="false">
+        <div>
+          <h3>Home Asset Inventory</h3>
+          <p>Identified home assets and classified each one by access, ownership, location, and sensitivity</p>
+          <div class="project-meta"><span class="pill done">Completed</span><span class="pill accent">Asset Management</span><span class="pill">Sensitivity Classification</span><span class="pill">Google Cybersecurity Certificate</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p>Coursework from the Google Cybersecurity Professional Certificate, completed from my own answers. An asset identification and sensitivity classification exercise: for each home asset, I recorded how often it is accessed, who owns it, where it is used, what information it holds, and the sensitivity classification that follows from that.</p>
+        <div class="asset-list">
+          <article class="asset-item">
+            <h5>External hard drive</h5>
+            <div class="project-meta"><span class="pill">Occasional access</span><span class="pill">Owner: Homeowner</span><span class="pill">On-premises</span><span class="pill accent">Confidential</span></div>
+            <p>Contains music and movies. Classified <strong>Confidential</strong>.</p>
+          </article>
+          <article class="asset-item">
+            <h5>Streaming media player</h5>
+            <div class="project-meta"><span class="pill">Continuous access</span><span class="pill">Owner: Homeowner</span><span class="pill">On-premises</span><span class="pill accent">Internal-only</span></div>
+            <p>Payment card information is stored on it for movie rentals. Classified <strong>Internal-only</strong>.</p>
+          </article>
+          <article class="asset-item">
+            <h5>Portable game console</h5>
+            <div class="project-meta"><span class="pill">Occasional access</span><span class="pill">Owner: Friend</span><span class="pill">On- and off-premises</span><span class="pill accent">Internal-only</span></div>
+            <p>Has a camera and microphone. Classified <strong>Internal-only</strong>.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <button class="project-head" aria-expanded="false">
+        <div>
+          <h3>Risk Register — Coastal Bank Scenario</h3>
+          <p>Scored five risks to the asset Funds using Likelihood × Severity</p>
+          <div class="project-meta"><span class="pill done">Completed</span><span class="pill accent">Risk Assessment</span><span class="pill">Likelihood × Severity</span><span class="pill">Google Cybersecurity Certificate</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p>Coursework from the Google Cybersecurity Professional Certificate. A risk assessment for the asset <strong>Funds</strong> in a coastal bank scenario, scored with my own ratings using <strong>Risk score = Likelihood × Severity</strong>.</p>
+        <table class="proj-table">
+          <thead><tr><th scope="col">Risk</th><th scope="col">Likelihood × Severity</th><th scope="col" class="score-h">Risk score</th></tr></thead>
+          <tbody>
+            <tr><td>Business email compromise</td><td>3 × 3</td><td class="score">9</td></tr>
+            <tr><td>Compromised user database</td><td>2 × 3</td><td class="score">6</td></tr>
+            <tr><td>Financial records leak</td><td>3 × 3</td><td class="score">9</td></tr>
+            <tr><td>Theft</td><td>2 × 2</td><td class="score">4</td></tr>
+            <tr><td>Supply chain disruption</td><td>1 × 3</td><td class="score">3</td></tr>
+          </tbody>
+        </table>
+        <p>Supply chain disruption was scored at a likelihood of 1 (revised from 2) because hurricanes in the scenario were described as occurring every few years. Business email compromise and a financial records leak came out as the highest risks, both scoring 9.</p>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <button class="project-head" aria-expanded="false">
+        <div>
+          <h3>Access Control Worksheet — Payroll Incident</h3>
+          <p>Matched an event log entry to a former contractor and identified why his access was never removed</p>
+          <div class="project-meta"><span class="pill done">Completed</span><span class="pill accent">Access Control</span><span class="pill">Least Privilege</span><span class="pill">Google Cybersecurity Certificate</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p>Course activity from the Google Cybersecurity Professional Certificate. Working from an event log and an employee directory for a payroll incident, I identified who was behind a suspicious login and what access-control failures made it possible.</p>
+        <p class="detail-label">Finding</p>
+        <p style="margin-top:8px">The event log user <strong>Legal\Administrator</strong> was matched — by IP address <strong>152.207.255.255</strong> and the exact time <strong>8:29:57 AM on 10/03/2023</strong> — to <strong>Robert Taylor Jr.</strong>, a Legal attorney and contractor whose contract had ended on <strong>12/27/2019</strong>.</p>
+        <p class="detail-label">Issues identified</p>
+        <ul class="detail-list">
+          <li>His access was never revoked after his contract ended.</li>
+          <li>Everyone in the directory was listed with Admin authorization, regardless of role.</li>
+        </ul>
+        <p class="detail-label">Recommendations</p>
+        <ul class="detail-list">
+          <li>Revoke or deactivate access on the contract end date, with a set procedure for doing so and regular access audits.</li>
+          <li>Apply role-based access control and least privilege, so authorization matches each person’s actual role.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <button class="project-head" aria-expanded="false">
+        <div>
+          <h3>Linux Fundamentals 1, 2 &amp; 3</h3>
+          <p>Completed — navigating directories and files, adjusting permissions, analyzing logs, and using common utilities</p>
+          <div class="project-meta"><span class="pill done">Completed</span><span class="pill accent">TryHackMe</span><span class="pill">Linux</span><span class="pill">Permissions</span><span class="pill">Logs</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p>Completed TryHackMe labs covering day-to-day Linux fluency — navigating directories and files, adjusting permissions, analyzing logs, and using common utilities — supporting the Linux named under Tools/Languages on the résumé.</p>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <button class="project-head" aria-expanded="false">
+        <div>
+          <h3>Windows Fundamentals 1, 2 &amp; 3</h3>
+          <p>Completed — file systems (FAT/NTFS), UAC, the registry, firewall, and system configuration</p>
+          <div class="project-meta"><span class="pill done">Completed</span><span class="pill accent">TryHackMe</span><span class="pill">Windows</span><span class="pill">Registry</span><span class="pill">Firewall</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p>Completed TryHackMe labs covering Windows file systems (FAT/NTFS), UAC, the registry, firewall, and system configuration — supporting the Windows named under Tools/Languages on the résumé.</p>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <button class="project-head" aria-expanded="false">
+        <div>
+          <h3>Networking Fundamentals</h3>
+          <p>Completed — networking concepts, protocols, and how networks are structured</p>
+          <div class="project-meta"><span class="pill done">Completed</span><span class="pill accent">TryHackMe</span><span class="pill">Networking</span><span class="pill">Protocols</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p>Completed TryHackMe lab covering networking fundamentals — core concepts and protocols that underpin network security work, including the packet analysis and hardening topics in my Security+ study.</p>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <button class="project-head" aria-expanded="false">
+        <div>
+          <h3>How Computers Work</h3>
+          <p>Completed — how computer hardware and operating systems work together</p>
+          <div class="project-meta"><span class="pill done">Completed</span><span class="pill accent">TryHackMe</span><span class="pill">Computing Fundamentals</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p>Completed TryHackMe lab covering how computers work — the hardware and operating-system foundations behind the Linux and Windows labs above.</p>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <button class="project-head" aria-expanded="false">
+        <div>
+          <h3>Linux Strength Training</h3>
+          <p>Planned — building further Linux fluency beyond the Fundamentals labs</p>
+          <div class="project-meta"><span class="pill planned">Planned</span><span class="pill accent">TryHackMe</span><span class="pill">Linux</span></div>
+        </div><span class="chev">+</span>
+      </button>
+      <div class="project-body">
+        <p>A planned TryHackMe lab for strengthening Linux skills beyond Linux Fundamentals 1–3. Not yet completed.</p>
       </div>
     </div>
 
@@ -569,13 +877,13 @@
     <div class="project reveal">
       <button class="project-head" aria-expanded="false">
         <div>
-          <h3>Windows Fundamentals (1, 2, &amp; 3) and Windows Forensics (1 &amp; 2)</h3>
-          <p>Covers Windows fundamentals — file systems (FAT/NTFS), UAC, registry, firewall, and system configuration — plus registry forensics and file recovery</p>
+          <h3>Windows Forensics 1 &amp; 2</h3>
+          <p>Covers registry forensics and file recovery on Windows systems</p>
           <div class="project-meta"><span class="pill planned">Planned</span><span class="pill accent">TryHackMe</span><span class="pill">Windows</span><span class="pill">Forensics</span><span class="pill">Registry</span></div>
         </div><span class="chev">+</span>
       </button>
       <div class="project-body">
-        <p>A planned lab track covering Windows file systems (FAT/NTFS), UAC, the registry, firewall, and system configuration, with registry forensics and file recovery exercises — building toward the Windows named under Tools/Languages on the résumé.</p>
+        <p>A planned lab track on Windows forensics — registry forensics and file recovery exercises — building on the completed Windows Fundamentals labs. Not yet completed.</p>
       </div>
     </div>
 
@@ -593,9 +901,51 @@
     </div>
   </section>
 
+  <!-- JOURNALS & PROJECT DOCUMENTS — FOUR REQUIRED SUBSECTIONS -->
+  <section id="journals-documents">
+    <div class="sec-label"><span class="sec-num">06</span><h2>Journals &amp; Project Documents</h2></div>
+    <div class="sec-rule"></div>
+    <p class="sec-intro">Four subsections with project documents and journals linked for review.</p>
+
+    <div class="subsection-grid">
+      <article class="card subsection-card reveal" id="tryhackme-journal">
+        <h3>TryHackMe Journal</h3>
+        <p>Journal document for TryHackMe labs and coursework.</p>
+        <div class="subsection-actions">
+          <a class="journal-link" href="https://docs.google.com/document/d/18PXiqhEAqqs6-09bZQGzXHQvK-DrExasB9EL1WrTQng/edit" target="_blank" rel="noopener">Open TryHackMe Journal document ↗</a>
+        </div>
+      </article>
+
+      <article class="card subsection-card reveal" id="incident-handlers-journal">
+        <h3>Incident Handler's Journal (Coming Soon)</h3>
+        <p>Coming soon.</p>
+        <div class="subsection-actions">
+          <span class="coming-soon-pill">Coming Soon</span>
+        </div>
+      </article>
+
+      <article class="card subsection-card reveal" id="vulnerable-system-analysis">
+        <h3>Vulnerable System Analysis (Coming Soon)</h3>
+        <p>Project document: “Vulnerability assessment report”.</p>
+        <div class="subsection-actions">
+          <a class="journal-link" href="https://docs.google.com/document/d/1cHRY6D36jS3yItAc1ERr1yXp_pL3-Xizuo1xvq6nLNo/edit" target="_blank" rel="noopener">Open Vulnerability assessment report ↗</a>
+        </div>
+      </article>
+
+      <article class="card subsection-card reveal" id="sql-query">
+        <h3>SQL Query (Coming Soon)</h3>
+        <p>SQL Query project document — Apply Filters to SQL Queries.</p>
+        <div class="subsection-actions">
+          <a class="journal-link" href="https://docs.google.com/document/d/1PDb2Ql4qp-Ne1piMxPoEkhWiELRm_Zmsyvjb8BreZ-M/edit" target="_blank" rel="noopener">Open SQL Query project document ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
   <!-- PROFESSIONAL EXPERIENCE -->
   <section id="experience">
-    <div class="sec-label"><span class="sec-num">05</span><h2>Professional Experience</h2></div>
+    <div class="sec-label"><span class="sec-num">07</span><h2>Professional Experience</h2></div>
     <div class="sec-rule"></div>
 
     <div class="timeline">
@@ -649,7 +999,7 @@
 
   <!-- EDUCATION, CERTIFICATES, & CERTIFICATIONS -->
   <section id="education">
-    <div class="sec-label"><span class="sec-num">06</span><h2>Education, Certificates, &amp; Certifications</h2></div>
+    <div class="sec-label"><span class="sec-num">08</span><h2>Education, Certificates, &amp; Certifications</h2></div>
     <div class="sec-rule"></div>
 
     <div class="edu-grid">
@@ -705,6 +1055,9 @@
       <ul>
         <li>Google Cybersecurity Professional Certificate — Expected 01/2027 (Merit America)</li>
         <li>Incident report case study — ICMP flood DDoS mapped to all five NIST CSF functions</li>
+        <li>SQL project — Apply Filters to SQL Queries: six filtered investigations using AND, OR, NOT, and LIKE</li>
+        <li>Coursework projects — Vulnerability Assessment Report (public database server, NIST SP 800-30 Rev. 1), Home Asset Inventory, Risk Register (asset: Funds), and Access Control Worksheet</li>
+        <li>TryHackMe — Linux &amp; Windows Fundamentals 1–3, Networking Fundamentals, and How Computers Work completed</li>
         <li>Amazon Warehouse Associate — 300+ returned units per shift (08/2025 - Present)</li>
         <li>Teaching foundation: Mathematics, Agricultural Science, Basic Science (2018-2021)</li>
       </ul>
@@ -786,7 +1139,7 @@
     });
   }, {rootMargin: '-38% 0px -55% 0px'}) : null;
   if(spy){
-    ['skills','case-study','summary','projects','experience','education'].forEach(function(id){
+    ['skills','case-study','sql-project','summary','projects','experience','education'].forEach(function(id){
       var s = document.getElementById(id);
       if(s) spy.observe(s);
     });
